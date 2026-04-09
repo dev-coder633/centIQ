@@ -1,0 +1,16 @@
+.goals {
+  padding: 30px;
+}
+
+.progress-bar {
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.progress {
+  height: 100%;
+  background: #6366f1;
+  border-radius: 10px;
+}

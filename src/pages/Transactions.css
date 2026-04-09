@@ -1,0 +1,48 @@
+.transactions-page {
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.transactions-page h2 {
+  margin-bottom: 20px;
+}
+
+/* Each transaction card */
+.card.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+/* Left side */
+.card.transaction strong {
+  font-size: 16px;
+}
+
+/* Amount colors */
+.green {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.red {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Delete button */
+.card.transaction button {
+  margin-top: 5px;
+  background: #ef4444;
+  padding: 6px 10px;
+}
+
+.card.transaction button:hover {
+  background: #dc2626;
+}
