@@ -1,0 +1,292 @@
+.dash {
+  max-width: 860px;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Dynamic background tints */
+.dash__bg--good    { --tint: rgba(52, 211, 153, 0.04); }
+.dash__bg--neutral { --tint: rgba(200, 241, 53, 0.04); }
+.dash__bg--warning { --tint: rgba(251, 191, 36, 0.05); }
+.dash__bg--danger  { --tint: rgba(248, 113, 113, 0.06); }
+
+.dash::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--tint, transparent);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.6s ease;
+}
+
+/* Header */
+.dash__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.dash__title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.dash__subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  margin-top: 4px;
+}
+
+.dash__mood {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.dash__mood-emoji { font-size: 18px; }
+.dash__mood-label { font-size: 13px; font-weight: 600; color: var(--text); }
+
+/* Summary cards */
+.dash__cards {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.dash__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.dash__card:hover { border-color: #3a3a48; }
+
+.dash__card--balance { border-top: 2px solid var(--accent); }
+.dash__card--income  { border-top: 2px solid var(--income); }
+.dash__card--expense { border-top: 2px solid var(--expense); }
+
+.dash__card-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dash__card-value {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.dash__card-value--income  { color: var(--income); }
+.dash__card-value--expense { color: var(--expense); }
+.dash__card-value--neg     { color: var(--expense); }
+
+.dash__card-tag {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--expense);
+  background: rgba(248,113,113,0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Progress bar */
+.dash__progress-section {
+  margin-bottom: 2rem;
+}
+
+.dash__progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.dash__progress-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.dash__progress-pct {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.dash__progress-track {
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.dash__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--income), var(--warning), var(--expense));
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+/* Bottom grid */
+.dash__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dash__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dash__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  margin-bottom: 1rem;
+}
+
+.dash__section-header .dash__section-title { margin-bottom: 0; }
+
+.dash__see-all {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  transition: opacity 0.15s;
+}
+
+.dash__see-all:hover { opacity: 0.7; }
+
+/* Category bars */
+.dash__cats { display: flex; flex-direction: column; gap: 10px; }
+
+.dash__cat-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 72px;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash__cat-name {
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash__cat-bar-track {
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.dash__cat-bar {
+  height: 100%;
+  background: var(--accent2);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.dash__cat-amt {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  text-align: right;
+}
+
+@media (max-width: 680px) {
+  .dash__cards { grid-template-columns: 1fr; }
+  .dash__bottom { grid-template-columns: 1fr; }
+  .dash__cat-row { grid-template-columns: 80px 1fr 64px; }
+}
+
+/* ── Simulation buttons (new) ── */
+.dash__sim-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dash__sim-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  border: 1px solid var(--border);
+}
+
+.dash__sim-btn--tx {
+  background: rgba(200, 241, 53, 0.08);
+  color: var(--accent);
+  border-color: rgba(200, 241, 53, 0.3);
+}
+
+.dash__sim-btn--tx:hover {
+  background: var(--accent);
+  color: #0a0a0f;
+  border-color: var(--accent);
+}
+
+.dash__sim-btn--salary {
+  background: rgba(52, 211, 153, 0.08);
+  color: var(--income);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.dash__sim-btn--salary:hover {
+  background: var(--income);
+  color: #0a0a0f;
+  border-color: var(--income);
+}
+
+.dash__sim-btn:active {
+  transform: scale(0.97);
+}
