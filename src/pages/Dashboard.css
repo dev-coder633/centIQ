@@ -240,3 +240,53 @@
   .dash__bottom { grid-template-columns: 1fr; }
   .dash__cat-row { grid-template-columns: 80px 1fr 64px; }
 }
+
+/* ── Simulation buttons (new) ── */
+.dash__sim-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dash__sim-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  border: 1px solid var(--border);
+}
+
+.dash__sim-btn--tx {
+  background: rgba(200, 241, 53, 0.08);
+  color: var(--accent);
+  border-color: rgba(200, 241, 53, 0.3);
+}
+
+.dash__sim-btn--tx:hover {
+  background: var(--accent);
+  color: #0a0a0f;
+  border-color: var(--accent);
+}
+
+.dash__sim-btn--salary {
+  background: rgba(52, 211, 153, 0.08);
+  color: var(--income);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.dash__sim-btn--salary:hover {
+  background: var(--income);
+  color: #0a0a0f;
+  border-color: var(--income);
+}
+
+.dash__sim-btn:active {
+  transform: scale(0.97);
+}

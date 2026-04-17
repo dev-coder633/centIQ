@@ -26,7 +26,7 @@ export default function App() {
         <Navbar />
         <main className="app-main">
           <Routes>
-            <Route path="/"             element={<Dashboard     transactions={transactions} onDelete={deleteTransaction} />} />
+            <Route path="/"             element={<Dashboard     transactions={transactions} onDelete={deleteTransaction} onAdd={addTransaction} />} />
             <Route path="/add"          element={<AddTransaction onAdd={addTransaction} />} />
             <Route path="/transactions" element={<Transactions  transactions={transactions} onDelete={deleteTransaction} />} />
             <Route path="/activity"     element={<Activity      transactions={transactions} />} />
