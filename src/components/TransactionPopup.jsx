@@ -116,18 +116,30 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
                 {isCredit ? "⬆" : "⬇"}
               </div>
               <div>
+<<<<<<< HEAD
                 <div style={{ fontSize: "11px", color: "#6b6b80", fontFamily: "'DM Mono', monospace", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                   {isCredit ? "Credit detected" : "Debit detected"}
                 </div>
                 <div style={{ fontSize: "18px", fontWeight: 700, color: isCredit ? "#34d399" : "#f87171", fontFamily: "'DM Mono', monospace", letterSpacing: "-0.02em" }}>
+=======
+                <div style={{ fontSize: "11px", color: "#6b6b80", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                  {isCredit ? "Credit detected" : "Debit detected"}
+                </div>
+                <div style={{ fontSize: "18px", fontWeight: 700, color: isCredit ? "#34d399" : "#f87171", fontFamily: "var(--font-mono)", letterSpacing: "-0.02em" }}>
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
                   {isCredit ? "+" : "-"}₹{transaction.amount.toLocaleString("en-IN")}
                 </div>
               </div>
             </div>
 
             <div style={{ textAlign: "right" }}>
+<<<<<<< HEAD
               <div style={{ fontSize: "11px", color: "#6b6b80", fontFamily: "'DM Mono', monospace" }}>auto-close in</div>
               <div style={{ fontSize: "15px", fontWeight: 600, fontFamily: "'DM Mono', monospace", color: timerColor }}>
+=======
+              <div style={{ fontSize: "11px", color: "#6b6b80", fontFamily: "var(--font-mono)" }}>auto-close in</div>
+              <div style={{ fontSize: "15px", fontWeight: 600, fontFamily: "var(--font-mono)", color: timerColor }}>
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
                 {formatTime(timeLeft)}
               </div>
             </div>
@@ -139,13 +151,21 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
             borderRadius: "10px", padding: "12px 14px", marginBottom: "1.25rem",
             display: "flex", justifyContent: "space-between", alignItems: "center",
           }}>
+<<<<<<< HEAD
             <span style={{ fontSize: "13px", color: "#6b6b80", fontFamily: "'DM Mono', monospace" }}>Merchant</span>
+=======
+            <span style={{ fontSize: "13px", color: "#6b6b80", fontFamily: "var(--font-mono)" }}>Merchant</span>
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
             <span style={{ fontSize: "14px", fontWeight: 600, color: "#e8e8f0" }}>{transaction.merchant}</span>
           </div>
 
           {/* Category selector */}
           <div style={{ marginBottom: "1.25rem" }}>
+<<<<<<< HEAD
             <div style={{ fontSize: "11px", color: "#6b6b80", fontFamily: "'DM Mono', monospace", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "8px" }}>
+=======
+            <div style={{ fontSize: "11px", color: "#6b6b80", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "8px" }}>
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
               Category
               {CATEGORY_MAP[transaction.merchant] && (
                 <span style={{ marginLeft: "8px", color: "#c8f135", fontSize: "10px" }}>● auto-detected</span>
@@ -158,7 +178,11 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
                   onClick={() => setCategory(cat)}
                   style={{
                     padding: "6px 12px", borderRadius: "20px", fontSize: "12px",
+<<<<<<< HEAD
                     fontFamily: "'Syne', sans-serif", fontWeight: 600, cursor: "pointer",
+=======
+                    fontFamily: "var(--font-display)", fontWeight: 600, cursor: "pointer",
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
                     border: `1px solid ${category === cat ? "#c8f135" : "#2a2a35"}`,
                     background: category === cat ? "rgba(200,241,53,0.1)" : "#18181f",
                     color: category === cat ? "#c8f135" : "#6b6b80",
@@ -179,7 +203,11 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
               display: "flex", gap: "8px", alignItems: "flex-start",
             }}>
               <span style={{ fontSize: "14px" }}>⚠️</span>
+<<<<<<< HEAD
               <span style={{ fontSize: "12px", color: "#fbbf24", fontFamily: "'DM Mono', monospace", lineHeight: 1.5 }}>
+=======
+              <span style={{ fontSize: "12px", color: "#fbbf24", fontFamily: "var(--font-mono)", lineHeight: 1.5 }}>
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
                 {budgetWarning}
               </span>
             </div>
@@ -190,7 +218,11 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
             <div style={{
               background: "rgba(248,113,113,0.08)", border: "1px solid rgba(248,113,113,0.25)",
               borderRadius: "8px", padding: "10px 12px", marginBottom: "1.25rem",
+<<<<<<< HEAD
               fontSize: "12px", color: "#f87171", fontFamily: "'DM Mono', monospace", textAlign: "center",
+=======
+              fontSize: "12px", color: "#f87171", fontFamily: "var(--font-mono)", textAlign: "center",
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
             }}>
               Timer expired — transaction not yet logged
             </div>
@@ -203,7 +235,11 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
               style={{
                 flex: 1, padding: "11px", borderRadius: "10px", border: "none",
                 background: "#c8f135", color: "#0a0a0f",
+<<<<<<< HEAD
                 fontSize: "14px", fontWeight: 700, fontFamily: "'Syne', sans-serif",
+=======
+                fontSize: "14px", fontWeight: 700, fontFamily: "var(--font-display)",
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
                 cursor: "pointer", transition: "opacity 0.15s",
               }}
               onMouseEnter={e => e.target.style.opacity = "0.85"}
@@ -217,7 +253,11 @@ export default function TransactionPopup({ transaction, onConfirm, onDismiss, bu
                 padding: "11px 16px", borderRadius: "10px",
                 border: "1px solid #2a2a35", background: "#18181f",
                 color: "#6b6b80", fontSize: "14px", fontWeight: 600,
+<<<<<<< HEAD
                 fontFamily: "'Syne', sans-serif", cursor: "pointer", transition: "all 0.15s",
+=======
+                fontFamily: "var(--font-display)", cursor: "pointer", transition: "all 0.15s",
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
               }}
               onMouseEnter={e => { e.target.style.borderColor = "#3a3a48"; e.target.style.color = "#e8e8f0"; }}
               onMouseLeave={e => { e.target.style.borderColor = "#2a2a35"; e.target.style.color = "#6b6b80"; }}

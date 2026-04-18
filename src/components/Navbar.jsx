@@ -91,7 +91,11 @@ export default function Navbar() {
     <nav style={styles.nav}>
       <NavLink to="/" style={styles.brand}>
         <span style={styles.logo}>₹</span>
+<<<<<<< HEAD
         <span style={styles.title}>FinTrack</span>
+=======
+        <span style={styles.title}>CentIQ</span>
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
       </NavLink>
 
       <ul style={styles.links}>

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "mse2",
+=======
+  "name": "personal-finance-tracker",
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +16,11 @@
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+<<<<<<< HEAD
     "react-router-dom": "^7.14.1"
+=======
+    "react-router-dom": "^7.14.0"
+>>>>>>> 24e714416693adc989eed067f69c89349740c66a
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
