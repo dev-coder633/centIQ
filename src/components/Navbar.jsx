@@ -91,7 +91,7 @@ export default function Navbar() {
     <nav style={styles.nav}>
       <NavLink to="/" style={styles.brand}>
         <span style={styles.logo}>₹</span>
-        <span style={styles.title}>FinTrack</span>
+        <span style={styles.title}>CentIQ</span>
       </NavLink>
 
       <ul style={styles.links}>
